@@ -1,0 +1,2218 @@
+{
+	"formatVersion": 6,
+	"modifications": [
+		{
+			"modification": "updateSettings",
+			"op": "set",
+			"key": "tenant",
+			"value": {
+				"inviteExpirationMinutes": 10080
+			}
+		},
+		{
+			"modification": "updateSettings",
+			"op": "set",
+			"key": "content",
+			"value": {
+				"useExistsInHasManyFilter": true,
+				"shortDateResponse": true
+			}
+		},
+		{
+			"modification": "createEnum",
+			"enumName": "contactType",
+			"values": [
+				"potentialClient",
+				"client",
+				"vipClient"
+			]
+		},
+		{
+			"modification": "createEnum",
+			"enumName": "currency",
+			"values": [
+				"usd",
+				"eur",
+				"gbp"
+			]
+		},
+		{
+			"modification": "createEnum",
+			"enumName": "dealStatus",
+			"values": [
+				"interest",
+				"overview",
+				"viewings",
+				"offers",
+				"hots",
+				"contact",
+				"signed",
+				"invoicing"
+			]
+		},
+		{
+			"modification": "createEnum",
+			"enumName": "employeeDivision",
+			"values": [
+				"industrial",
+				"officeRetail",
+				"services",
+				"propertyManagement",
+				"projectManagement",
+				"research",
+				"operations"
+			]
+		},
+		{
+			"modification": "createEnum",
+			"enumName": "leadStatus",
+			"values": [
+				"lead",
+				"contacted",
+				"qualified",
+				"proposal",
+				"negotiation",
+				"contractSent",
+				"won",
+				"lost",
+				"onHold"
+			]
+		},
+		{
+			"modification": "createEnum",
+			"enumName": "personRole",
+			"values": [
+				"agent",
+				"manager",
+				"employee",
+				"head",
+				"board",
+				"finance",
+				"research",
+				"admin"
+			]
+		},
+		{
+			"modification": "createEnum",
+			"enumName": "priority",
+			"values": [
+				"low",
+				"medium",
+				"high"
+			]
+		},
+		{
+			"modification": "createEnum",
+			"enumName": "projectUrgency",
+			"values": [
+				"low",
+				"medium",
+				"high",
+				"critical"
+			]
+		},
+		{
+			"modification": "createEnum",
+			"enumName": "salesQualificationScore",
+			"values": [
+				"low",
+				"medium",
+				"high"
+			]
+		},
+		{
+			"modification": "createEnum",
+			"enumName": "serviceType",
+			"values": [
+				"mvpBuild",
+				"uxAudit",
+				"staffAugmentation",
+				"consulting",
+				"maintenance",
+				"other"
+			]
+		},
+		{
+			"modification": "createEnum",
+			"enumName": "sourceType",
+			"values": [
+				"advertisement",
+				"personal",
+				"catalog",
+				"other"
+			]
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Branch",
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "branch",
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"columnType": "uuid",
+						"nullable": false,
+						"type": "Uuid"
+					}
+				},
+				"unique": [],
+				"indexes": [],
+				"eventLog": {
+					"enabled": true
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Company",
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "company",
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"columnType": "uuid",
+						"nullable": false,
+						"type": "Uuid"
+					}
+				},
+				"unique": [],
+				"indexes": [],
+				"eventLog": {
+					"enabled": true
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Contact",
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "contact",
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"columnType": "uuid",
+						"nullable": false,
+						"type": "Uuid"
+					}
+				},
+				"unique": [],
+				"indexes": [],
+				"eventLog": {
+					"enabled": true
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Country",
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "country",
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"columnType": "uuid",
+						"nullable": false,
+						"type": "Uuid"
+					}
+				},
+				"unique": [],
+				"indexes": [],
+				"eventLog": {
+					"enabled": true
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "File",
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "file",
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"columnType": "uuid",
+						"nullable": false,
+						"type": "Uuid"
+					}
+				},
+				"unique": [],
+				"indexes": [],
+				"eventLog": {
+					"enabled": true
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Image",
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "image",
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"columnType": "uuid",
+						"nullable": false,
+						"type": "Uuid"
+					}
+				},
+				"unique": [],
+				"indexes": [],
+				"eventLog": {
+					"enabled": true
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "ImageMetadata",
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "image_metadata",
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"columnType": "uuid",
+						"nullable": false,
+						"type": "Uuid"
+					}
+				},
+				"unique": [],
+				"indexes": [],
+				"eventLog": {
+					"enabled": true
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Lead",
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "lead",
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"columnType": "uuid",
+						"nullable": false,
+						"type": "Uuid"
+					}
+				},
+				"unique": [],
+				"indexes": [],
+				"eventLog": {
+					"enabled": true
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Location",
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "location",
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"columnType": "uuid",
+						"nullable": false,
+						"type": "Uuid"
+					}
+				},
+				"unique": [],
+				"indexes": [],
+				"eventLog": {
+					"enabled": true
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Note",
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "note",
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"columnType": "uuid",
+						"nullable": false,
+						"type": "Uuid"
+					}
+				},
+				"unique": [],
+				"indexes": [],
+				"eventLog": {
+					"enabled": true
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Offer",
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "offer",
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"columnType": "uuid",
+						"nullable": false,
+						"type": "Uuid"
+					}
+				},
+				"unique": [],
+				"indexes": [],
+				"eventLog": {
+					"enabled": true
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Person",
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "person",
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"columnType": "uuid",
+						"nullable": false,
+						"type": "Uuid"
+					}
+				},
+				"unique": [],
+				"indexes": [],
+				"eventLog": {
+					"enabled": true
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "ProfilePicture",
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "profile_picture",
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"columnType": "uuid",
+						"nullable": false,
+						"type": "Uuid"
+					}
+				},
+				"unique": [],
+				"indexes": [],
+				"eventLog": {
+					"enabled": true
+				}
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Branch",
+			"field": {
+				"name": "createdAt",
+				"columnName": "created_at",
+				"columnType": "timestamptz",
+				"nullable": false,
+				"type": "DateTime",
+				"default": "now"
+			},
+			"fillValue": "now",
+			"valueMigrationStrategy": "using"
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Branch",
+			"field": {
+				"name": "name",
+				"columnName": "name",
+				"columnType": "text",
+				"nullable": false,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Branch",
+			"field": {
+				"name": "region",
+				"columnName": "region",
+				"columnType": "text",
+				"nullable": true,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Branch",
+			"field": {
+				"name": "city",
+				"columnName": "city",
+				"columnType": "text",
+				"nullable": true,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Company",
+			"field": {
+				"name": "createdAt",
+				"columnName": "created_at",
+				"columnType": "timestamptz",
+				"nullable": false,
+				"type": "DateTime",
+				"default": "now"
+			},
+			"fillValue": "now",
+			"valueMigrationStrategy": "using"
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Company",
+			"field": {
+				"name": "name",
+				"columnName": "name",
+				"columnType": "text",
+				"nullable": false,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Company",
+			"field": {
+				"name": "industry",
+				"columnName": "industry",
+				"columnType": "text",
+				"nullable": true,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Company",
+			"field": {
+				"name": "address",
+				"columnName": "address",
+				"columnType": "text",
+				"nullable": true,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Company",
+			"field": {
+				"name": "vatNumber",
+				"columnName": "vat_number",
+				"columnType": "text",
+				"nullable": true,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Company",
+			"field": {
+				"name": "identificationNumber",
+				"columnName": "identification_number",
+				"columnType": "text",
+				"nullable": true,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Company",
+			"field": {
+				"name": "website",
+				"columnName": "website",
+				"columnType": "text",
+				"nullable": true,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Contact",
+			"field": {
+				"name": "createdAt",
+				"columnName": "created_at",
+				"columnType": "timestamptz",
+				"nullable": false,
+				"type": "DateTime",
+				"default": "now"
+			},
+			"fillValue": "now",
+			"valueMigrationStrategy": "using"
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Contact",
+			"field": {
+				"name": "firstName",
+				"columnName": "first_name",
+				"columnType": "text",
+				"nullable": false,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Contact",
+			"field": {
+				"name": "lastName",
+				"columnName": "last_name",
+				"columnType": "text",
+				"nullable": false,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Contact",
+			"field": {
+				"name": "email",
+				"columnName": "email",
+				"columnType": "text",
+				"nullable": true,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Contact",
+			"field": {
+				"name": "phone",
+				"columnName": "phone",
+				"columnType": "text",
+				"nullable": true,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Contact",
+			"field": {
+				"name": "contactType",
+				"columnName": "contact_type",
+				"columnType": "contactType",
+				"nullable": false,
+				"type": "Enum",
+				"default": "potentialClient"
+			},
+			"fillValue": "potentialClient",
+			"valueMigrationStrategy": "using"
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Contact",
+			"field": {
+				"name": "position",
+				"columnName": "position",
+				"columnType": "text",
+				"nullable": true,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Contact",
+			"field": {
+				"name": "address",
+				"columnName": "address",
+				"columnType": "text",
+				"nullable": true,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Contact",
+			"field": {
+				"name": "note",
+				"columnName": "note",
+				"columnType": "text",
+				"nullable": true,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Country",
+			"field": {
+				"name": "createdAt",
+				"columnName": "created_at",
+				"columnType": "timestamptz",
+				"nullable": false,
+				"type": "DateTime",
+				"default": "now"
+			},
+			"fillValue": "now",
+			"valueMigrationStrategy": "using"
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Country",
+			"field": {
+				"name": "name",
+				"columnName": "name",
+				"columnType": "text",
+				"nullable": false,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "File",
+			"field": {
+				"name": "createdAt",
+				"columnName": "created_at",
+				"columnType": "timestamptz",
+				"nullable": false,
+				"type": "DateTime",
+				"default": "now"
+			},
+			"fillValue": "now",
+			"valueMigrationStrategy": "using"
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "File",
+			"field": {
+				"name": "url",
+				"columnName": "url",
+				"columnType": "text",
+				"nullable": false,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Image",
+			"field": {
+				"name": "createdAt",
+				"columnName": "created_at",
+				"columnType": "timestamptz",
+				"nullable": false,
+				"type": "DateTime",
+				"default": "now"
+			},
+			"fillValue": "now",
+			"valueMigrationStrategy": "using"
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Image",
+			"field": {
+				"name": "url",
+				"columnName": "url",
+				"columnType": "text",
+				"nullable": false,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Image",
+			"field": {
+				"name": "width",
+				"columnName": "width",
+				"columnType": "integer",
+				"nullable": true,
+				"type": "Integer"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Image",
+			"field": {
+				"name": "height",
+				"columnName": "height",
+				"columnType": "integer",
+				"nullable": true,
+				"type": "Integer"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Image",
+			"field": {
+				"name": "alt",
+				"columnName": "alt",
+				"columnType": "text",
+				"nullable": true,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "ImageMetadata",
+			"field": {
+				"name": "createdAt",
+				"columnName": "created_at",
+				"columnType": "timestamptz",
+				"nullable": false,
+				"type": "DateTime",
+				"default": "now"
+			},
+			"fillValue": "now",
+			"valueMigrationStrategy": "using"
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "ImageMetadata",
+			"field": {
+				"name": "fileName",
+				"columnName": "file_name",
+				"columnType": "text",
+				"nullable": true,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "ImageMetadata",
+			"field": {
+				"name": "lastModified",
+				"columnName": "last_modified",
+				"columnType": "timestamptz",
+				"nullable": true,
+				"type": "DateTime"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "ImageMetadata",
+			"field": {
+				"name": "fileSize",
+				"columnName": "file_size",
+				"columnType": "integer",
+				"nullable": true,
+				"type": "Integer"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "ImageMetadata",
+			"field": {
+				"name": "fileType",
+				"columnName": "file_type",
+				"columnType": "text",
+				"nullable": true,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Lead",
+			"field": {
+				"name": "createdAt",
+				"columnName": "created_at",
+				"columnType": "timestamptz",
+				"nullable": false,
+				"type": "DateTime",
+				"default": "now"
+			},
+			"fillValue": "now",
+			"valueMigrationStrategy": "using"
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Lead",
+			"field": {
+				"name": "name",
+				"columnName": "name",
+				"columnType": "text",
+				"nullable": false,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Lead",
+			"field": {
+				"name": "status",
+				"columnName": "status",
+				"columnType": "leadStatus",
+				"nullable": false,
+				"type": "Enum"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Lead",
+			"field": {
+				"name": "amount",
+				"columnName": "amount",
+				"columnType": "double precision",
+				"nullable": true,
+				"type": "Double"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Lead",
+			"field": {
+				"name": "currency",
+				"columnName": "currency",
+				"columnType": "currency",
+				"nullable": true,
+				"type": "Enum"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Lead",
+			"field": {
+				"name": "closeDate",
+				"columnName": "close_date",
+				"columnType": "date",
+				"nullable": true,
+				"type": "Date"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Lead",
+			"field": {
+				"name": "lastContactDate",
+				"columnName": "last_contact_date",
+				"columnType": "date",
+				"nullable": true,
+				"type": "Date"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Lead",
+			"field": {
+				"name": "nextActionDate",
+				"columnName": "next_action_date",
+				"columnType": "date",
+				"nullable": true,
+				"type": "Date"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Lead",
+			"field": {
+				"name": "nextActionNotes",
+				"columnName": "next_action_notes",
+				"columnType": "text",
+				"nullable": true,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Lead",
+			"field": {
+				"name": "serviceType",
+				"columnName": "service_type",
+				"columnType": "serviceType",
+				"nullable": true,
+				"type": "Enum"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Lead",
+			"field": {
+				"name": "projectScopeSummary",
+				"columnName": "project_scope_summary",
+				"columnType": "text",
+				"nullable": true,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Lead",
+			"field": {
+				"name": "budgetEstimate",
+				"columnName": "budget_estimate",
+				"columnType": "double precision",
+				"nullable": true,
+				"type": "Double"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Lead",
+			"field": {
+				"name": "projectUrgency",
+				"columnName": "project_urgency",
+				"columnType": "projectUrgency",
+				"nullable": true,
+				"type": "Enum"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Lead",
+			"field": {
+				"name": "decisionMakerIdentified",
+				"columnName": "decision_maker_identified",
+				"columnType": "boolean",
+				"nullable": true,
+				"type": "Bool"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Lead",
+			"field": {
+				"name": "salesQualificationScore",
+				"columnName": "sales_qualification_score",
+				"columnType": "salesQualificationScore",
+				"nullable": true,
+				"type": "Enum"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Lead",
+			"field": {
+				"name": "proposalSent",
+				"columnName": "proposal_sent",
+				"columnType": "boolean",
+				"nullable": true,
+				"type": "Bool"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Lead",
+			"field": {
+				"name": "proposalLink",
+				"columnName": "proposal_link",
+				"columnType": "text",
+				"nullable": true,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Lead",
+			"field": {
+				"name": "contractSent",
+				"columnName": "contract_sent",
+				"columnType": "boolean",
+				"nullable": true,
+				"type": "Bool"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Lead",
+			"field": {
+				"name": "contractSignedDate",
+				"columnName": "contract_signed_date",
+				"columnType": "date",
+				"nullable": true,
+				"type": "Date"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Lead",
+			"field": {
+				"name": "source",
+				"columnName": "source",
+				"columnType": "sourceType",
+				"nullable": true,
+				"type": "Enum"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Lead",
+			"field": {
+				"name": "referrer",
+				"columnName": "referrer",
+				"columnType": "text",
+				"nullable": true,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Lead",
+			"field": {
+				"name": "marketingCampaign",
+				"columnName": "marketing_campaign",
+				"columnType": "text",
+				"nullable": true,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Lead",
+			"field": {
+				"name": "industry",
+				"columnName": "industry",
+				"columnType": "text",
+				"nullable": true,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Lead",
+			"field": {
+				"name": "priority",
+				"columnName": "priority",
+				"columnType": "priority",
+				"nullable": true,
+				"type": "Enum"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Lead",
+			"field": {
+				"name": "isStrategic",
+				"columnName": "is_strategic",
+				"columnType": "boolean",
+				"nullable": true,
+				"type": "Bool"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Lead",
+			"field": {
+				"name": "displayOrder",
+				"columnName": "display_order",
+				"columnType": "integer",
+				"nullable": true,
+				"type": "Integer",
+				"default": 0
+			},
+			"fillValue": 0,
+			"valueMigrationStrategy": "using"
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Location",
+			"field": {
+				"name": "createdAt",
+				"columnName": "created_at",
+				"columnType": "timestamptz",
+				"nullable": false,
+				"type": "DateTime",
+				"default": "now"
+			},
+			"fillValue": "now",
+			"valueMigrationStrategy": "using"
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Location",
+			"field": {
+				"name": "country",
+				"columnName": "country",
+				"columnType": "text",
+				"nullable": false,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Location",
+			"field": {
+				"name": "region",
+				"columnName": "region",
+				"columnType": "text",
+				"nullable": true,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Location",
+			"field": {
+				"name": "district",
+				"columnName": "district",
+				"columnType": "text",
+				"nullable": true,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Location",
+			"field": {
+				"name": "city",
+				"columnName": "city",
+				"columnType": "text",
+				"nullable": false,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Note",
+			"field": {
+				"name": "createdAt",
+				"columnName": "created_at",
+				"columnType": "timestamptz",
+				"nullable": false,
+				"type": "DateTime",
+				"default": "now"
+			},
+			"fillValue": "now",
+			"valueMigrationStrategy": "using"
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Note",
+			"field": {
+				"name": "content",
+				"columnName": "content",
+				"columnType": "text",
+				"nullable": false,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Offer",
+			"field": {
+				"name": "createdAt",
+				"columnName": "created_at",
+				"columnType": "timestamptz",
+				"nullable": false,
+				"type": "DateTime",
+				"default": "now"
+			},
+			"fillValue": "now",
+			"valueMigrationStrategy": "using"
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Offer",
+			"field": {
+				"name": "description",
+				"columnName": "description",
+				"columnType": "text",
+				"nullable": false,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Offer",
+			"field": {
+				"name": "price",
+				"columnName": "price",
+				"columnType": "double precision",
+				"nullable": false,
+				"type": "Double"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Offer",
+			"field": {
+				"name": "validUntil",
+				"columnName": "valid_until",
+				"columnType": "date",
+				"nullable": true,
+				"type": "Date"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Person",
+			"field": {
+				"name": "createdAt",
+				"columnName": "created_at",
+				"columnType": "timestamptz",
+				"nullable": false,
+				"type": "DateTime",
+				"default": "now"
+			},
+			"fillValue": "now",
+			"valueMigrationStrategy": "using"
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Person",
+			"field": {
+				"name": "updatedAt",
+				"columnName": "updated_at",
+				"columnType": "timestamptz",
+				"nullable": false,
+				"type": "DateTime",
+				"default": "now"
+			},
+			"fillValue": "now",
+			"valueMigrationStrategy": "using"
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Person",
+			"field": {
+				"name": "firstName",
+				"columnName": "first_name",
+				"columnType": "text",
+				"nullable": false,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Person",
+			"field": {
+				"name": "lastName",
+				"columnName": "last_name",
+				"columnType": "text",
+				"nullable": false,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Person",
+			"field": {
+				"name": "email",
+				"columnName": "email",
+				"columnType": "text",
+				"nullable": false,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Person",
+			"field": {
+				"name": "phone",
+				"columnName": "phone",
+				"columnType": "text",
+				"nullable": true,
+				"type": "String"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Person",
+			"field": {
+				"name": "role",
+				"columnName": "role",
+				"columnType": "personRole",
+				"nullable": true,
+				"type": "Enum"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Person",
+			"field": {
+				"name": "personId",
+				"columnName": "person_id",
+				"columnType": "uuid",
+				"nullable": true,
+				"type": "Uuid"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "ProfilePicture",
+			"field": {
+				"name": "createdAt",
+				"columnName": "created_at",
+				"columnType": "timestamptz",
+				"nullable": false,
+				"type": "DateTime",
+				"default": "now"
+			},
+			"fillValue": "now",
+			"valueMigrationStrategy": "using"
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Branch",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "company",
+				"target": "Company",
+				"joiningColumn": {
+					"columnName": "company_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true,
+				"inversedBy": "branches"
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "branches",
+				"target": "Branch",
+				"ownedBy": "company"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Branch",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "country",
+				"target": "Country",
+				"joiningColumn": {
+					"columnName": "country_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true,
+				"inversedBy": "branches"
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "branches",
+				"target": "Branch",
+				"ownedBy": "country"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Branch",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "logo",
+				"target": "Image",
+				"joiningColumn": {
+					"columnName": "logo_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true,
+				"inversedBy": "branchLogo"
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "branchLogo",
+				"target": "Branch",
+				"ownedBy": "logo"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Company",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "country",
+				"target": "Country",
+				"joiningColumn": {
+					"columnName": "country_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true,
+				"inversedBy": "companies"
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "companies",
+				"target": "Company",
+				"ownedBy": "country"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Company",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "logo",
+				"target": "Image",
+				"joiningColumn": {
+					"columnName": "logo_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true,
+				"inversedBy": "companyLogo"
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "companyLogo",
+				"target": "Company",
+				"ownedBy": "logo"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Contact",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "company",
+				"target": "Company",
+				"joiningColumn": {
+					"columnName": "company_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true,
+				"inversedBy": "contacts"
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "contacts",
+				"target": "Contact",
+				"ownedBy": "company"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Contact",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "branch",
+				"target": "Branch",
+				"joiningColumn": {
+					"columnName": "branch_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true,
+				"inversedBy": "contacts"
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "contacts",
+				"target": "Contact",
+				"ownedBy": "branch"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Image",
+			"owningSide": {
+				"type": "OneHasOne",
+				"name": "meta",
+				"target": "ImageMetadata",
+				"joiningColumn": {
+					"columnName": "meta_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true,
+				"inversedBy": "image"
+			},
+			"inverseSide": {
+				"type": "OneHasOne",
+				"name": "image",
+				"target": "Image",
+				"ownedBy": "meta",
+				"nullable": true
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Lead",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "company",
+				"target": "Company",
+				"joiningColumn": {
+					"columnName": "company_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true,
+				"inversedBy": "leads"
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "leads",
+				"target": "Lead",
+				"ownedBy": "company"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Lead",
+			"owningSide": {
+				"type": "ManyHasMany",
+				"name": "contacts",
+				"target": "Contact",
+				"joiningTable": {
+					"tableName": "lead_contacts",
+					"joiningColumn": {
+						"columnName": "lead_id",
+						"onDelete": "cascade"
+					},
+					"inverseJoiningColumn": {
+						"columnName": "contact_id",
+						"onDelete": "cascade"
+					},
+					"eventLog": {
+						"enabled": true
+					}
+				},
+				"inversedBy": "leads"
+			},
+			"inverseSide": {
+				"type": "ManyHasMany",
+				"name": "leads",
+				"target": "Lead",
+				"ownedBy": "contacts"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Lead",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "responsibleEmployee",
+				"target": "Person",
+				"joiningColumn": {
+					"columnName": "responsible_employee_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true,
+				"inversedBy": "leads"
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "leads",
+				"target": "Lead",
+				"ownedBy": "responsibleEmployee"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Note",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "author",
+				"target": "Person",
+				"joiningColumn": {
+					"columnName": "author_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true,
+				"inversedBy": "notes"
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "notes",
+				"target": "Note",
+				"ownedBy": "author"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Note",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "lead",
+				"target": "Lead",
+				"joiningColumn": {
+					"columnName": "lead_id",
+					"onDelete": "cascade"
+				},
+				"nullable": true,
+				"inversedBy": "notes"
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "notes",
+				"target": "Note",
+				"ownedBy": "lead"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Offer",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "lead",
+				"target": "Lead",
+				"joiningColumn": {
+					"columnName": "lead_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true,
+				"inversedBy": "offers"
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "offers",
+				"target": "Offer",
+				"ownedBy": "lead"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Person",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "supervisor",
+				"target": "Person",
+				"joiningColumn": {
+					"columnName": "supervisor_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true,
+				"inversedBy": "subordinates"
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "subordinates",
+				"target": "Person",
+				"ownedBy": "supervisor"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Person",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "branch",
+				"target": "Branch",
+				"joiningColumn": {
+					"columnName": "branch_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true,
+				"inversedBy": "employees"
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "employees",
+				"target": "Person",
+				"ownedBy": "branch"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Person",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "profilePicture",
+				"target": "ProfilePicture",
+				"joiningColumn": {
+					"columnName": "profile_picture_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true,
+				"inversedBy": "person"
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "person",
+				"target": "Person",
+				"ownedBy": "profilePicture"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "ProfilePicture",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "image",
+				"target": "Image",
+				"joiningColumn": {
+					"columnName": "image_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true,
+				"inversedBy": "profilePicture"
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "profilePicture",
+				"target": "ProfilePicture",
+				"ownedBy": "image"
+			}
+		},
+		{
+			"modification": "createView",
+			"entity": {
+				"name": "TenantPerson",
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "tenant_person",
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"columnType": "uuid",
+						"nullable": false,
+						"type": "Uuid"
+					},
+					"createdAt": {
+						"name": "createdAt",
+						"columnName": "created_at",
+						"columnType": "timestamptz",
+						"nullable": false,
+						"type": "DateTime",
+						"default": "now"
+					},
+					"identityId": {
+						"name": "identityId",
+						"columnName": "identity_id",
+						"columnType": "uuid",
+						"nullable": false,
+						"type": "Uuid"
+					},
+					"email": {
+						"name": "email",
+						"columnName": "email",
+						"columnType": "text",
+						"nullable": true,
+						"type": "String"
+					},
+					"otpUri": {
+						"name": "otpUri",
+						"columnName": "otp_uri",
+						"columnType": "text",
+						"nullable": true,
+						"type": "String"
+					},
+					"otpActivatedAt": {
+						"name": "otpActivatedAt",
+						"columnName": "otp_activated_at",
+						"columnType": "text",
+						"nullable": true,
+						"type": "String"
+					},
+					"idpOnly": {
+						"name": "idpOnly",
+						"columnName": "idp_only",
+						"columnType": "text",
+						"nullable": true,
+						"type": "String"
+					},
+					"roles": {
+						"name": "roles",
+						"columnName": "roles",
+						"columnType": "text",
+						"nullable": true,
+						"type": "String"
+					},
+					"person": {
+						"type": "OneHasOne",
+						"name": "person",
+						"target": "Person",
+						"joiningColumn": {
+							"columnName": "person_id",
+							"onDelete": "restrict"
+						},
+						"nullable": true,
+						"inversedBy": "tenantPerson"
+					}
+				},
+				"unique": [],
+				"indexes": [],
+				"eventLog": {
+					"enabled": true
+				},
+				"view": {
+					"sql": "\n\tSELECT\n\t\ttenant_person.id,\n\t\ttenant_person.email,\n\t\ttenant_person.identity_id,\n\t\tcontent_person.id AS person_id,\n\t\tSTRING_AGG(DISTINCT project_membership.role, ', ') AS roles\n\tFROM person AS content_person\n\t\tFULL OUTER JOIN tenant.person AS tenant_person ON tenant_person.id = content_person.person_id\n\t\tLEFT JOIN tenant.identity AS tenant_identity ON tenant_person.identity_id = tenant_identity.id\n\t\tLEFT JOIN tenant.project_membership AS project_membership ON tenant_identity.id = project_membership.identity_id\n\tWHERE tenant_person.id IS NOT NULL\n\tGROUP BY tenant_person.id, content_person.id\n"
+				}
+			}
+		},
+		{
+			"modification": "createRelationInverseSide",
+			"entityName": "Person",
+			"relation": {
+				"type": "OneHasOne",
+				"name": "tenantPerson",
+				"target": "TenantPerson",
+				"ownedBy": "person",
+				"nullable": true
+			}
+		},
+		{
+			"modification": "createUniqueConstraint",
+			"entityName": "Contact",
+			"unique": {
+				"fields": [
+					"email"
+				]
+			}
+		},
+		{
+			"modification": "createUniqueConstraint",
+			"entityName": "Person",
+			"unique": {
+				"fields": [
+					"personId"
+				]
+			}
+		},
+		{
+			"modification": "createUniqueConstraint",
+			"entityName": "Person",
+			"unique": {
+				"fields": [
+					"email"
+				]
+			}
+		},
+		{
+			"modification": "patchAclSchema",
+			"patch": [
+				{
+					"op": "add",
+					"path": "/roles/agent",
+					"value": {
+						"stages": "*",
+						"entities": {
+							"Company": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"createdAt": true,
+										"name": true,
+										"industry": true,
+										"branches": true,
+										"leads": true
+									},
+									"create": {
+										"createdAt": true,
+										"name": true,
+										"industry": true,
+										"branches": true,
+										"leads": true
+									},
+									"update": {
+										"createdAt": true,
+										"name": true,
+										"industry": true,
+										"branches": true,
+										"leads": true
+									}
+								}
+							},
+							"Contact": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"createdAt": true,
+										"firstName": true,
+										"lastName": true,
+										"email": true,
+										"phone": true,
+										"leads": true
+									},
+									"create": {
+										"createdAt": true,
+										"firstName": true,
+										"lastName": true,
+										"email": true,
+										"phone": true,
+										"leads": true
+									},
+									"update": {
+										"createdAt": true,
+										"firstName": true,
+										"lastName": true,
+										"email": true,
+										"phone": true,
+										"leads": true
+									},
+									"delete": true
+								}
+							},
+							"Offer": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"createdAt": true,
+										"description": true,
+										"price": true,
+										"validUntil": true,
+										"lead": true
+									},
+									"create": {
+										"createdAt": true,
+										"description": true,
+										"price": true,
+										"validUntil": true,
+										"lead": true
+									},
+									"update": {
+										"createdAt": true,
+										"description": true,
+										"price": true,
+										"validUntil": true,
+										"lead": true
+									},
+									"delete": true
+								}
+							},
+							"Person": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"createdAt": true,
+										"updatedAt": true,
+										"firstName": true,
+										"lastName": true,
+										"email": true,
+										"phone": true,
+										"subordinates": true,
+										"supervisor": true,
+										"leads": true,
+										"branch": true,
+										"profilePicture": true,
+										"notes": true,
+										"role": true,
+										"personId": true,
+										"tenantPerson": true
+									},
+									"update": {
+										"createdAt": true,
+										"updatedAt": true,
+										"firstName": true,
+										"lastName": true,
+										"email": true,
+										"phone": true,
+										"subordinates": true,
+										"supervisor": true,
+										"leads": true,
+										"branch": true,
+										"profilePicture": true,
+										"notes": true,
+										"role": true,
+										"personId": true,
+										"tenantPerson": true
+									}
+								}
+							}
+						},
+						"variables": {}
+					}
+				},
+				{
+					"op": "add",
+					"path": "/roles/board",
+					"value": {
+						"stages": "*",
+						"entities": {},
+						"variables": {}
+					}
+				},
+				{
+					"op": "add",
+					"path": "/roles/employee",
+					"value": {
+						"stages": "*",
+						"entities": {},
+						"variables": {}
+					}
+				},
+				{
+					"op": "add",
+					"path": "/roles/finance",
+					"value": {
+						"stages": "*",
+						"entities": {},
+						"variables": {}
+					}
+				},
+				{
+					"op": "add",
+					"path": "/roles/head",
+					"value": {
+						"stages": "*",
+						"entities": {},
+						"variables": {}
+					}
+				},
+				{
+					"op": "add",
+					"path": "/roles/manager",
+					"value": {
+						"stages": "*",
+						"entities": {
+							"Company": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"createdAt": true,
+										"name": true,
+										"industry": true,
+										"branches": true,
+										"leads": true
+									},
+									"create": {
+										"createdAt": true,
+										"name": true,
+										"industry": true,
+										"branches": true,
+										"leads": true
+									},
+									"update": {
+										"createdAt": true,
+										"name": true,
+										"industry": true,
+										"branches": true,
+										"leads": true
+									},
+									"delete": true
+								}
+							},
+							"Contact": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"createdAt": true,
+										"firstName": true,
+										"lastName": true,
+										"email": true,
+										"phone": true,
+										"leads": true
+									},
+									"create": {
+										"createdAt": true,
+										"firstName": true,
+										"lastName": true,
+										"email": true,
+										"phone": true,
+										"leads": true
+									},
+									"update": {
+										"createdAt": true,
+										"firstName": true,
+										"lastName": true,
+										"email": true,
+										"phone": true,
+										"leads": true
+									},
+									"delete": true
+								}
+							},
+							"Offer": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"createdAt": true,
+										"description": true,
+										"price": true,
+										"validUntil": true,
+										"lead": true
+									},
+									"create": {
+										"createdAt": true,
+										"description": true,
+										"price": true,
+										"validUntil": true,
+										"lead": true
+									},
+									"update": {
+										"createdAt": true,
+										"description": true,
+										"price": true,
+										"validUntil": true,
+										"lead": true
+									},
+									"delete": true
+								}
+							},
+							"Person": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"createdAt": true,
+										"updatedAt": true,
+										"firstName": true,
+										"lastName": true,
+										"email": true,
+										"phone": true,
+										"subordinates": true,
+										"supervisor": true,
+										"leads": true,
+										"branch": true,
+										"profilePicture": true,
+										"notes": true,
+										"role": true,
+										"personId": true,
+										"tenantPerson": true
+									},
+									"create": {
+										"createdAt": true,
+										"updatedAt": true,
+										"firstName": true,
+										"lastName": true,
+										"email": true,
+										"phone": true,
+										"subordinates": true,
+										"supervisor": true,
+										"leads": true,
+										"branch": true,
+										"profilePicture": true,
+										"notes": true,
+										"role": true,
+										"personId": true,
+										"tenantPerson": true
+									},
+									"update": {
+										"createdAt": true,
+										"updatedAt": true,
+										"firstName": true,
+										"lastName": true,
+										"email": true,
+										"phone": true,
+										"subordinates": true,
+										"supervisor": true,
+										"leads": true,
+										"branch": true,
+										"profilePicture": true,
+										"notes": true,
+										"role": true,
+										"personId": true,
+										"tenantPerson": true
+									}
+								}
+							}
+						},
+						"variables": {}
+					}
+				},
+				{
+					"op": "add",
+					"path": "/roles/research",
+					"value": {
+						"stages": "*",
+						"entities": {},
+						"variables": {}
+					}
+				}
+			]
+		}
+	]
+}
