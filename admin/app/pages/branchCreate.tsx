@@ -1,9 +1,9 @@
+import { EntitySubTree, RedirectOnPersist } from '@contember/interface'
+import { Building2Icon } from 'lucide-react'
 import { BranchForm } from '~/app/components/forms/branch-form'
 import { Binding, PersistButton } from '~/lib/binding'
 import { BackButton } from '~/lib/buttons'
 import { Slots, Title } from '~/lib/layout'
-import { EntitySubTree, RedirectOnPersist } from '@contember/interface'
-import { Building2Icon, BuildingIcon } from 'lucide-react'
 
 export default () => {
 	return (
@@ -20,7 +20,7 @@ export default () => {
 							<div className="bg-gradient-to-r from-primary-lighter/40 to-white px-6 py-4 border-b">
 								<h1 className="text-xl font-bold text-primary-darker">Branch Details</h1>
 							</div>
-							
+
 							<div className="px-6 pt-5 pb-2 mt-2">
 								<h2 className="text-md font-bold text-gray-700 mb-7 ml-4 flex items-center gap-1.5">
 									<Building2Icon className="w-4 h-4" />
@@ -29,7 +29,7 @@ export default () => {
 								<BranchForm />
 							</div>
 						</div>
-						
+
 						<Slots.Actions>
 							<PersistButton />
 						</Slots.Actions>
