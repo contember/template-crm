@@ -1,10 +1,9 @@
 import { If, Field, Component } from '@contember/interface'
-import { Dialog, DialogTrigger, DialogContent, DialogClose } from '@radix-ui/react-dialog'
 import { FileSignatureIcon, PencilIcon } from 'lucide-react'
 import { PersistButton } from '~/lib/binding'
 import { FormLayout, CheckboxField, InputField } from '~/lib/form'
 import { Button } from '~/lib/ui/button'
-import { DialogHeader, DialogFooter } from '~/lib/ui/dialog'
+import { DialogHeader, DialogFooter, Dialog, DialogClose, DialogContent, DialogTrigger } from '~/lib/ui/dialog'
 import { TableWrapper, TableBody, TableRow, TableCell, Table } from '~/lib/ui/table'
 import { TabContent } from '../tabs'
 
