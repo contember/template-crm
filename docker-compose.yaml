@@ -1,6 +1,6 @@
 services:
   contember-engine:
-    image: contember/engine:2.0.0
+    image: contember/engine:2.0.2
 
     environment:
       NODE_ENV: 'development'
@@ -25,7 +25,7 @@ services:
       DEFAULT_S3_SECRET: 'contember'
       DEFAULT_S3_PROVIDER: 'minio'
 
-      TENANT_MAILER_HOST: 'mailhog'
+      TENANT_MAILER_HOST: 'mailpit'
       TENANT_MAILER_PORT: '1025'
       TENANT_MAILER_FROM: 'contember@localhost'
 
@@ -43,7 +43,7 @@ services:
         condition: service_healthy
 
   contember-cli:
-    image: contember/cli:2.0.0
+    image: contember/cli:2.0.2
     user: '1000:1000'
 
     deploy:
@@ -91,12 +91,16 @@ services:
 
     ports:
       - '1483:9000'
+      - '1486:9001'
 
     volumes:
       - minio-data:/bitnami/minio/data
 
-  mailhog:
-    image: mailhog/mailhog
+  mailpit:
+    image: axllent/mailpit
+    environment:
+      MP_SMTP_AUTH_ACCEPT_ANY: 1
+      MP_SMTP_AUTH_ALLOW_INSECURE: 1
     ports:
       - '1484:8025'
 

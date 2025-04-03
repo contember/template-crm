@@ -1,11 +1,13 @@
-name = "template-crm-worker"
+name = "my-contember-worker"
 main = "./src/index.ts"
 compatibility_date = "2024-04-29"
-logpush = true
+
+[observability]
+enabled = true
 
 [vars]
 CONTEMBER_BASE_API_URL = "http://localhost:1481"
-CONTEMBER_PROJECT_SLUG = "template-crm"
+CONTEMBER_PROJECT_SLUG = "app"
 
 # [secrets]
 # CONTEMBER_API_TOKEN
