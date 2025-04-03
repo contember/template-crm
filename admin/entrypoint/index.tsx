@@ -1,4 +1,5 @@
 import '../index.css'
+import '../sentry'
 import { createErrorHandler } from '@contember/react-devbar'
 import { createRoot } from 'react-dom/client'
 import { Entrypoint } from './entrypoint'
